@@ -1,0 +1,46 @@
+<view class="container">
+
+  <!-- 通知栏 -->
+  <view class="notice-bar">
+    <text>{{notice}}</text>
+  </view>
+
+  <!-- 轮播图 -->
+  <swiper class="swiper-box" indicator-dots="true" autoplay="true" interval="3000" circular="true">
+    <block wx:for="{{swiperList}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item}}" class="swiper-img" mode="aspectFill"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!-- 卡片列表 -->
+  <view class="card-list">
+    <block wx:for="{{cardList}}" wx:key="index">
+      <view class="card-item">
+        <!-- 左侧装修图片 -->
+        <image class="card-img" src="{{item.img}}" mode="aspectFill"></image>
+        <!-- 右侧内容 -->
+        <view class="card-content">
+          <!-- 标题 -->
+          <view class="card-title">{{item.title}}</view>
+          <!-- 面积 -->
+          <view class="card-time">
+            <text>面积：承接 {{item.maxArea}} ㎡</text>
+            <text> | 已完成：{{item.completedArea}} ㎡</text>
+          </view>
+          <!-- 施工 + 交付 -->
+          <view class="card-time">
+            <text>施工：预计 {{item.workDays}} 天</text>
+            <text> | 交付：{{item.endDate}}</text>
+          </view>
+          <!-- 地址 -->
+          <view class="address-text">
+            <text>地址: {{ item.address.length > 15 ? item.address.substring(0,15) + '...' : item.address }}</text>
+            </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+</view>

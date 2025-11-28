@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/constructiondetail/constructiondetail",
+    "pages/requirementsconfirmation/requirementsconfirmation",
+    "pages/constructionprogress/constructionprogress"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#3D4999"
+  },
+  "tabBar": {
+    "selectedColor": "#000000",
+    "backgroundColor": "#FFFFFF",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "工程列表",
+        "iconPath": "images/requirements-1.png",
+        "selectedIconPath": "images/requirements-2.png"
+      },
+      {
+        "pagePath": "pages/constructiondetail/constructiondetail",
+        "text": "施工详情",
+        "iconPath": "images/requirements-1.png",
+        "selectedIconPath": "images/requirements-2.png"
+      },
+      {
+        "pagePath": "pages/requirementsconfirmation/requirementsconfirmation",
+        "text": "需求确认",
+        "iconPath": "images/requirements-1.png",
+        "selectedIconPath": "images/requirements-2.png"
+      },
+      {
+        "pagePath": "pages/constructionprogress/constructionprogress",
+        "text": "施工进度",
+        "iconPath": "images/requirements-1.png",
+        "selectedIconPath": "images/requirements-2.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}
