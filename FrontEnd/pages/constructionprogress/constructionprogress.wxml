@@ -1,1 +1,36 @@
-<text>施工进度</text>
+<wxs src="/utils/formatdata.wxs" module="tools" />
+<view class="page">
+
+<!-- 第一部分：用户信息卡片 -->
+<view class="card user-card">
+  <image class="avatar" src="{{user.avatar}}" mode="aspectFill"></image>
+
+  <view class="user-info">
+    <view class="name">{{ user.name }}</view>
+    <view class="phone">{{ maskedPhone }}</view>
+    <view class="stats">
+      <view>今日施工面积：{{ user.todayArea }}㎡</view>
+      <view>已验收面积：{{ user.acceptedArea }}㎡</view>
+      <view>未验收面积：{{ user.unacceptedArea }}㎡</view>
+    </view>
+  </view>
+</view>
+
+
+<!-- 第二部分：施工信息卡片 -->
+<view class="card work-card">
+  <image class="work-image" src="{{work.image}}" mode="aspectFill"></image>
+
+  <view class="work-info">
+    <view class="line">工程编号：{{ work.code }}</view>
+    <view class="line">施工地址：{{ tools.formatAddr(work.address)}}</view>
+    <view class="line">施工面积：{{ work.area }}㎡</view>
+    <view class="line">完工时间：{{ work.finishTime }}</view>
+
+    <view class="status" style="color: {{ statusColor }};">
+      当前状态：{{ work.status }}
+    </view>
+  </view>
+</view>
+
+</view>

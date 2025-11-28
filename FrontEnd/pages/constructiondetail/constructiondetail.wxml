@@ -1,1 +1,5 @@
-<text>施工详情</text>
+<view>施工详情</view>
+<button type="warn" plain size="mini" bind:tap="handleConsole">点击控制台打印</button>
+<view class="parentButton" bind:tap="handleParent">
+  <button type="primary" catch:tap="handleChildren">ChildrenButton</button>
+</view>

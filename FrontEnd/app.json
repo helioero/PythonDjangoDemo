@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/constructiondetail/constructiondetail",
     "pages/requirementsconfirmation/requirementsconfirmation",
-    "pages/constructionprogress/constructionprogress"
+    "pages/constructionprogress/constructionprogress",
+    "pages/constructiondescription/constructiondescription"
   ],
   "window": {
     "navigationBarBackgroundColor": "#000000",

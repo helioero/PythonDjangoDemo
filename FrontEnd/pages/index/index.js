@@ -7,13 +7,12 @@ Page({
       "/images/swiper2.jpg",
       "/images/swiper3.jpg"
     ],
-
     cardList: [
       {
         img: "/images/yg1.jpg",
         title: "定制衣柜",
         address: "北京市朝阳区北三环XX街道XX路88号XX大厦XX室",
-        desc: "材质：实木 施工注意事项好好好好好好好好好好好好好好好好好好哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈",
+        projectCode: "BJ20250101001",
         maxArea: 9.2,
         completedArea: 3.2,
         workDays: 12,
@@ -23,8 +22,18 @@ Page({
         img: "/images/yg1.jpg",
         title: "电视柜",
         address: "广东省广州市番禺区桥南街XX街道XX花园23栋103",
-        desc: "材质：实木 施工注意事项好好好好好好好好好好好好好好好好好好哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈",
+        projectCode: "GD20250104001",
         maxArea: 5.1,
+        completedArea: 1.2,
+        workDays: 8,
+        endDate: "2025-01-20"
+      },
+      {
+        img: "/images/yg1.jpg",
+        title: "定制墙面",
+        address: "四川省成都市双流区桥南街XX街道XX花园23栋103",
+        projectCode: "SC20250103001",
+        maxArea: 8.3,
         completedArea: 1.2,
         workDays: 8,
         endDate: "2025-01-20"
@@ -33,26 +42,14 @@ Page({
         img: "/images/yg1.jpg",
         title: "全屋定制",
         address: "广东省广州市番禺区桥南街XX街道XX花园23栋103",
-        desc: "材质：实木 施工注意事项好好好好好好好好好好好好好好好好好好哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈",
+        projectCode: "GD20250522001",
         maxArea: 35.1,
-        completedArea: 11.5,
+        completedArea: 0,
         workDays: 8,
-        endDate: "2025-01-20"
+        endDate: "2025-09-20"
       }
     ]
-  },
-  onLoad() {
-    // 预处理：增加 truncatedAddress 字段（最多 15 字符）并保护 undefined
-    const processed = (this.data.cardList || []).map(item => {
-      const addr = (item.address || "").toString();
-      const max = 15;
-      const truncated = addr.length > max ? addr.slice(0, max) + "..." : addr;
-      return {
-        ...item,
-        truncatedAddress: truncated || "地址未填写"
-      };
-    });
-
-    this.setData({ cardList: processed });
   }
 });
+
+

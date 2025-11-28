@@ -1,1 +1,76 @@
-/* pages/constructionprogress/constructionprogress.wxss */
+.page {
+  background: #f5f6f7;
+  padding: 20px;
+}
+
+/* 卡片公共样式 */
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+  display: flex;
+  margin-bottom: 22px;
+}
+
+
+/* 第一部分：用户信息 */
+.avatar {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.user-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.name {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.phone {
+  font-size: 28rpx;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.stats view {
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+
+/* 第二部分：施工信息卡片 */
+.work-image {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.work-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.line {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.status {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-top: 8px;
+}

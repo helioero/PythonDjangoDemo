@@ -1,4 +1,4 @@
-// pages/constructiondetail/constructiondetail.js
+// pages/constructiondescription/constructiondescription.js
 Page({
 
   /**
@@ -47,7 +47,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-    
+
   },
 
   /**
@@ -56,15 +56,7 @@ Page({
   onReachBottom() {
 
   },
-  handleConsole(){
-    console.log('click...')
-  },
-  handleParent(){
-    console.log('Parent click...')
-  },
-  handleChildren(){
-    console.log('Children click...')
-  },
+
   /**
    * 用户点击右上角分享
    */

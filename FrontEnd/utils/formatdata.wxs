@@ -1,0 +1,8 @@
+var formatAddr = function(str) {
+  if (str.length > 14) {
+    return str.substring(0, 14) + "...";
+  } else {
+    return '地址未填写';
+  }
+}
+module.exports.formatAddr = formatAddr;

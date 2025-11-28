@@ -1,3 +1,4 @@
+<wxs src="/utils/formatdata.wxs" module="tools" />
 <view class="container">
 
   <!-- 通知栏 -->
@@ -16,6 +17,7 @@
 
   <!-- 卡片列表 -->
   <view class="card-list">
+    
     <block wx:for="{{cardList}}" wx:key="index">
       <view class="card-item">
         <!-- 左侧装修图片 -->
@@ -23,10 +25,13 @@
         <!-- 右侧内容 -->
         <view class="card-content">
           <!-- 标题 -->
-          <view class="card-title">{{item.title}}</view>
+          <view class="card-title">
+            <view class="left">{{item.title}}</view>
+            <view class="right">{{item.projectCode}}</view>
+          </view>
           <!-- 面积 -->
           <view class="card-time">
-            <text>面积：承接 {{item.maxArea}} ㎡</text>
+            <text>总面积：{{item.maxArea}} ㎡</text>
             <text> | 已完成：{{item.completedArea}} ㎡</text>
           </view>
           <!-- 施工 + 交付 -->
@@ -36,11 +41,15 @@
           </view>
           <!-- 地址 -->
           <view class="address-text">
-            <text>地址: {{ item.address.length > 15 ? item.address.substring(0,15) + '...' : item.address }}</text>
-            </view>
+            <text>地址: {{ tools.formatAddr(item.address)}}</text>
+          </view>
         </view>
       </view>
     </block>
+    <!-- 当列表为空时显示提示 -->
+    <view wx:if="{{!cardList || cardList.length === 0}}" class="empty-tips">
+      <text>未找到工程列表,请刷新或登录后重试</text>
+    </view>
   </view>
 
 </view>
