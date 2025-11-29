@@ -5,14 +5,37 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    desc: [{
+      id: 1,
+      projectId: 1,
+      desc_text: "组装定制衣柜",
+      materialsAreReady: true,
+      area: 4.8
+    },
+    {
+      id: 2,
+      projectId: 1,
+      desc_text: "安装灯条",
+      materialsAreReady: true,
+      area: 0.2
+    }]
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    const id = options.id;
 
+    // 根据 ID 查找工程详情（从本地或接口)
+    const allData = wx.getStorageSync('cardList') || [];
+
+    const desc = allData.find(item => item.id == id);
+
+    if (desc) {
+      this.setData({
+        desc
+      });
+    }
   },
 
   /**

@@ -19,7 +19,7 @@
   <view class="card-list">
     
     <block wx:for="{{cardList}}" wx:key="index">
-      <view class="card-item">
+      <view class="card-item" data-id="{{item.id}}" bind:tap="goToDesc">
         <!-- 左侧装修图片 -->
         <image class="card-img" src="{{item.img}}" mode="aspectFill"></image>
         <!-- 右侧内容 -->

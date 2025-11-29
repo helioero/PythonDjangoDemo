@@ -9,6 +9,7 @@ Page({
     ],
     cardList: [
       {
+        id: 1,
         img: "/images/yg1.jpg",
         title: "定制衣柜",
         address: "北京市朝阳区北三环XX街道XX路88号XX大厦XX室",
@@ -19,6 +20,7 @@ Page({
         endDate: "2025-01-28"
       },
       {
+        id: 2,
         img: "/images/yg1.jpg",
         title: "电视柜",
         address: "广东省广州市番禺区桥南街XX街道XX花园23栋103",
@@ -29,6 +31,7 @@ Page({
         endDate: "2025-01-20"
       },
       {
+        id: 3,
         img: "/images/yg1.jpg",
         title: "定制墙面",
         address: "四川省成都市双流区桥南街XX街道XX花园23栋103",
@@ -39,6 +42,7 @@ Page({
         endDate: "2025-01-20"
       },
       {
+        id: 4,
         img: "/images/yg1.jpg",
         title: "全屋定制",
         address: "广东省广州市番禺区桥南街XX街道XX花园23栋103",
@@ -49,6 +53,12 @@ Page({
         endDate: "2025-09-20"
       }
     ]
+  },
+  goToDesc(event){
+    const id = event.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: `/pages/constructiondescription/constructiondescription?id=${id}`
+    })
   }
 });
 
