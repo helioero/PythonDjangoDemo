@@ -1,2 +1,64 @@
-<!--pages/constructiondescription/constructiondescription.wxml-->
-<text>pages/constructiondescription/constructiondescription.wxml</text>
+<view class="page">
+
+<!-- 工程基本信息卡片 -->
+<view class="info-card">
+
+  <!-- 第一行：标题 + 工程编号 -->
+  <view class="row-between">
+    <view class="title">{{project.title}}</view>
+    <view class="project-code">{{project.projectCode}}</view>
+  </view>
+
+  <!-- 第二行：面积/工期等 -->
+  <view class="row-info">
+    <view>总面积：{{project.maxArea}} ㎡</view>
+    <view>已完成：{{project.completedArea}} ㎡</view>
+    <view>施工天数：{{project.workDays}} 天</view>
+    <view>交付日期：{{project.endDate}}</view>
+  </view>
+
+  <!-- 第三行：地址 -->
+  <view class="row-info">
+    地址：{{project.address}}
+  </view>
+
+</view>
+
+<!-- 施工详情卡片（循环 desc_list） -->
+<block wx:for="{{project.desc_list}}" wx:key="id">
+  <view class="desc-card">
+
+    <!-- 左侧现场图 -->
+    <image class="scene-img" src="{{project.img}}" mode="aspectFill"></image>
+
+    <!-- 右侧文本 -->
+    <view class="desc-info">
+
+      <!-- 施工标题 + 状态标签 -->
+      <view class="desc-title">
+        {{item.desc_text}}
+        <text class="{{item.materialsAreReady ? 'green' : 'red'}}">{{ item.materialsAreReady ? '可施工' : '待备料' }}
+        </text>
+      </view>
+
+      <!-- 材料是否到场 -->
+      <view class="desc-text flex-row">
+        <text>材料是否已到现场：{{ item.materialsAreReady ? '已到场' : '未到场' }}</text>
+      </view>
+
+      <!-- 工程面积 -->
+      <view class="desc-text">
+        本部分施工面积：{{item.area}} ㎡
+      </view>
+
+      <!-- 预计施工时间 -->
+      <view class="desc-text">
+        预计施工时间：{{item.workDay}} 天
+      </view>
+
+    </view>
+
+  </view>
+</block>
+
+</view>
